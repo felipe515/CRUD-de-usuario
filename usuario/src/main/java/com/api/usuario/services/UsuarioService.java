@@ -9,12 +9,14 @@ import com.api.usuario.repositores.UsuarioRepository;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author felip
  */
+@Service
 public class UsuarioService {
     
     final UsuarioRepository usuarioRepository;
@@ -36,5 +38,7 @@ public class UsuarioService {
         return usuarioRepository.findById(id);
     }
     
-    
+    public void delete(UsuarioModel usuarioModel){
+        usuarioRepository.delete(usuarioModel);
+    }    
 }
