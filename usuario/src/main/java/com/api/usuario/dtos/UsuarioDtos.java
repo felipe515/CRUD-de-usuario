@@ -19,7 +19,6 @@ public class UsuarioDtos {
     private String nome;
     
     @NotBlank
-    @Email
     private String email;
     
     @NotBlank

@@ -7,12 +7,14 @@ package com.api.usuario.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.util.UUID;
-import org.springframework.data.annotation.Id;
+
 
 /**
  *
@@ -20,9 +22,8 @@ import org.springframework.data.annotation.Id;
  */
 @Entity
 @Table(name = "usuario")
-public class UsuarioModel implements Serializable{
-    
-    private final static long serialVersionUID = 1L;
+public class UsuarioModel implements Serializable{  
+    private static final long serialVersionUID = 1L;
    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
