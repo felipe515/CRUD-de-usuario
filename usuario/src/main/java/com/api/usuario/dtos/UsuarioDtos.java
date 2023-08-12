@@ -15,14 +15,15 @@ import jakarta.validation.constraints.Size;
 public class UsuarioDtos {
     
     @NotBlank
-    @Size(max = 150)
+    @Size(max = 100)
     private String nome;
     
     @NotBlank
+    @Size(max = 100)
     private String email;
     
     @NotBlank
-    @Size(max = 20)
+    @Size(max = 50)
     private String telefone;
     
     @NotBlank

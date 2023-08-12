@@ -42,7 +42,7 @@ public class UsuarioController {
     @PostMapping
     public ResponseEntity<Object> saveUsuario(@RequestBody @Valid UsuarioDtos usuarioDtos){
         UsuarioModel usuarioModel = new UsuarioModel();
-        BeanUtils.copyProperties(usuarioDtos, usuarioDtos);
+        BeanUtils.copyProperties(usuarioDtos, usuarioModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.save(usuarioModel));
     }
     
