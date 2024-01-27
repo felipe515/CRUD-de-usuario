@@ -8,7 +8,6 @@ import com.api.usuario.model.UsuarioModel;
 import com.api.usuario.repositores.UsuarioRepository;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,7 +33,7 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
     
-    public Optional<UsuarioModel> findById(UUID id){
+    public Optional<UsuarioModel> findById(Long id){
         return usuarioRepository.findById(id);
     }
     

@@ -13,7 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.io.Serializable;
-import java.util.UUID;
+
 
 
 /**
@@ -27,7 +27,7 @@ public class UsuarioModel implements Serializable{
    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
     
     @Column(nullable = false, length = 100)
     private String nome;
@@ -35,17 +35,14 @@ public class UsuarioModel implements Serializable{
     @Column(nullable = false, length = 100)
     private String email;
     
-    @Column(nullable = false, length = 50)
-    private String telefone;
-    
     @Column(nullable = false)
     private String senha;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -63,14 +60,6 @@ public class UsuarioModel implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
     }
 
     public String getSenha() {

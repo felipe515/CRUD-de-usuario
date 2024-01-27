@@ -10,7 +10,6 @@ import com.api.usuario.services.UsuarioService;
 import jakarta.validation.Valid;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,7 +51,7 @@ public class UsuarioController {
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getOneUsuario(@PathVariable(value = "id") UUID id){
+    public ResponseEntity<Object> getOneUsuario(@PathVariable(value = "id") Long id){
         Optional <UsuarioModel> usuarioModelOptional = usuarioService.findById(id);
         if(!usuarioModelOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario not found.");
@@ -61,7 +60,8 @@ public class UsuarioController {
     }
     
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteUsuario(@PathVariable(value = "id")UUID id){
+    public ResponseEntity<Object> deleteUsuario(@PathVariable(value = "id")Long id){
+            System.out.println("ID recebido no backend: " + id.toString());
         Optional <UsuarioModel> usuarioModelOptional = usuarioService.findById(id);
         if(!usuarioModelOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario not found");
@@ -71,7 +71,7 @@ public class UsuarioController {
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateUsuario(@PathVariable(value = "id")UUID id, @RequestBody @Valid UsuarioDtos usuarioDtos){
+    public ResponseEntity<Object> updateUsuario(@PathVariable(value = "id")Long id, @RequestBody @Valid UsuarioDtos usuarioDtos){    
         Optional <UsuarioModel> usuarioModelOptional = usuarioService.findById(id);
         if(!usuarioModelOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario not Found");

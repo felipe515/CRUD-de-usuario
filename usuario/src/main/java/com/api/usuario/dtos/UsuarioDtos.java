@@ -23,10 +23,6 @@ public class UsuarioDtos {
     private String email;
     
     @NotBlank
-    @Size(max = 50)
-    private String telefone;
-    
-    @NotBlank
     private String senha;
 
     public String getNome() {
@@ -43,14 +39,6 @@ public class UsuarioDtos {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
     }
 
     public String getSenha() {

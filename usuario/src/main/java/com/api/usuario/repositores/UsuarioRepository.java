@@ -5,7 +5,8 @@
 package com.api.usuario.repositores;
 
 import com.api.usuario.model.UsuarioModel;
-import java.util.UUID;
+import java.util.Optional;
+//import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<UsuarioModel,UUID>{
+public interface UsuarioRepository extends JpaRepository<UsuarioModel,Long>{
     
+    //Optional<UsuarioModel> findUsuarioById(Long id);
 }
